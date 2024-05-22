@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Cards</title>
+    <style>
+      .user-card {
+        border: 1px solid #000;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        width: 200px;
+      }
+      .user-card h2,
+      .user-card p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!--div to store user cards-->
+    <div id="user-container"></div>
+
+    <h2>Add New User</h2>
+    <form id="user-form">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <button type="submit">Add User</button>
+    </form>
+
+    <script src="index.js"></script>
+  </body>
+</html>
