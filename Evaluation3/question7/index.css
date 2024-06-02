@@ -1,0 +1,30 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 300px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card h2 {
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.card p {
+    margin-bottom: 8px;
+}
+
+.card .price {
+    font-weight: bold;
+}
+
+.card .rating {
+    color: #ffc107;
+    font-weight: bold;
+}
