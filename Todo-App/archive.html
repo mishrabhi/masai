@@ -13,6 +13,35 @@
         <a href="/archive.html">Archive</a>
       </div>
     </nav>
+    <div class="container">
+        <div class="form-container">
+            <select id="priority-select">
+                <option value="" disabled selected>Select priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <select id="status-select">
+                <option value="" disabled selected>Select status</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Restore</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
   </body>
 </html>
 <script src="/scripts/archive.js"></script>

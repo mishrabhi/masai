@@ -12,6 +12,51 @@
         <a href="/index.html">Home</a>
         <a href="/archive.html">Archive</a>
       </div>
+      <div class="container">
+        <div class="form-container">
+          <input type="text" placeholder="Enter todo item" id="todo-input" />
+          <select id="priority-select">
+            <option value="low">Low</option>
+            <option value="medium" style="background-color: rgb(255, 255, 0)">
+              Medium
+            </option>
+            <option value="high" style="background-color: rgb(255, 0, 0)">
+              High
+            </option>
+          </select>
+          <button id="add-todo">Add Todo</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr>
+              <td>learn html.</td>
+              <td class="low">low</td>
+              <td class="completed">Completed <span>&#9989;</span></td>
+              <td><button class="archive-btn">Archive</button></td>
+            </tr>
+            <tr>
+              <td>learn css.</td>
+              <td class="medium">medium</td>
+              <td class="pending">Pending <span>&#9203;</span></td>
+              <td><button class="archive-btn">Archive</button></td>
+            </tr>
+            <tr>
+              <td>learn javascript.</td>
+              <td class="high">high</td>
+              <td class="pending">Pending <span>&#9203;</span></td>
+              <td><button class="archive-btn">Archive</button></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
     </nav>
   </body>
 </html>
