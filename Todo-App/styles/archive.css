@@ -38,7 +38,7 @@
 }
 
 table {
-    width: 50%;
+    width: 40%;
     border-collapse: collapse;
     margin-top: 2em;
 }
@@ -47,50 +47,5 @@ table,
 th,
 td {
     border: 1px solid #ccc;
-}
-
-/* 
-
-th,
-td {
-    padding: 1em;
-    text-align: left;
-}
-
-.low {
-    background-color: lightgreen;
-}
-
-.medium {
-    background-color: yellow;
-}
-
-.high {
-    background-color: red;
-}
-
-.completed {
-    background-color: lightgreen;
-}
-
-.pending {
-    background-color: yellow;
-} */
-
-.restore-btn {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.delete-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    cursor: pointer;
+    text-align: center;
 }

@@ -7,7 +7,6 @@ displayData(arr);
 btn.addEventListener("click", function (event) {
   event.preventDefault();
   getData();
-  console.log(arr);
   displayData(arr);
 });
 
@@ -44,9 +43,6 @@ function displayData(arr) {
     var tdRank = document.createElement("td");
     tdRank.innerText = ele.rank;
 
-    var tdStatus = document.createElement("td");
-    tdStatus.innerText = "pending";
-
     if (ele.rank === "medium") {
       tdRank.style.backgroundColor = "yellow";
     } else if (ele.rank === "high") {
@@ -59,13 +55,18 @@ function displayData(arr) {
       deleteData(i);
     });
 
-    tr1.append(tdName, tdRank, tdStatus, btn);
+    tr1.append(tdName, tdRank, btn);
     tbody.append(tr1);
   });
 }
 
 // Deleting data and updating localStorage
-function deleteData(index) {
+var deletedArr = JSON.parse(localStorage.getItem("Deleteddata")) || [];
+function deleteData(ele, index) {
+  console.log(ele);
+  deletedArr.push(arr[ele]);
+  console.log("deleted", deletedArr);
+  localStorage.setItem("Deleteddata", JSON.stringify(deletedArr));
   arr.splice(index, 1);
   localStorage.setItem("data", JSON.stringify(arr));
   displayData(arr);

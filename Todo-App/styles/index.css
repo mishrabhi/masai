@@ -54,7 +54,7 @@
 }
 
 table {
-    width: 50%;
+    width: 40%;
     border-collapse: collapse;
     margin-top: 2em;
 }
@@ -68,34 +68,16 @@ td {
 th,
 td {
     padding: 1em;
-    text-align: left;
+    text-align: center;
 }
 
-/* .low {
-    background-color: lightgreen;
-}
-
-.medium {
-    background-color: yellow;
-}
-
-.high {
-    background-color: red;
-}
-
-.completed {
-    background-color: lightgreen;
-}
-
-.pending {
-    background-color: yellow;
-} */
-
-.archive-btn {
+button {
     background-color: red;
     color: white;
     border: none;
     padding: 0.5em 1em;
     border-radius: 4px;
     cursor: pointer;
+    display: block;
+    margin: auto;
 }
