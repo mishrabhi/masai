@@ -8,6 +8,8 @@ This project is a simple To-Do List application that allows users to add, priori
 - **Priority Selection:** Tasks can be assigned a priority (low, medium, high) and are color-coded accordingly.
 
 - **Archive Management:** Users can view, restore, or permanently delete archived tasks.
+
+- **Filter:** Users can filter out todo's based on its priority.
 - **Local Storage:** All tasks and their states are stored in local storage to persist across sessions.
 
 ### Future-Work:
