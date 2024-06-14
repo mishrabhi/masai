@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+}
+
+.slideshow-container {
+    width: 100%;
+    max-width: 800px;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+
+.slideshow-container img {
+    width: 100%;
+}
