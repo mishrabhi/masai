@@ -5,15 +5,18 @@
 let marks = [85, 90, 78, 92, 88];
 let cutoff = 80;
 
+//function to check coding score
 function codingScoreCheck(marks, cutoff) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      //calculate total marks
       let total = 0;
       for (let mark of marks) {
         total += mark;
       }
+      //calculate average score
       let average = total / marks.length;
-
+      //check if average score meets cutooff score
       if (average >= cutoff) {
         resolve(average);
       } else {
