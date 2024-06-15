@@ -2,4 +2,33 @@
 // if the average score of all the evaluations is greater or equal to the cutoff resolve the promise with the average score.
 // else reject with the following message Sorry you haven’t cleared the coding round.
 
-let marks = [80, 60, 95, 70, 75];
+let marks = [85, 90, 78, 92, 88];
+let cutoff = 80;
+
+function codingScoreCheck(marks, cutoff) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let total = 0;
+      for (let mark of marks) {
+        total += mark;
+      }
+      let average = total / marks.length;
+
+      if (average >= cutoff) {
+        resolve(average);
+      } else {
+        reject("Sorry you haven't cleared the coding round");
+      }
+    }, 2000);
+  });
+}
+
+codingScoreCheck(marks, cutoff)
+  .then((average) => {
+    console.log(
+      `Congratulations! You cleared the coding round with an average score of ${average}.`
+    );
+  })
+  .catch((error) => {
+    console.log(error);
+  });
