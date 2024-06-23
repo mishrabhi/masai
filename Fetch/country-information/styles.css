@@ -11,9 +11,9 @@ header {
     padding: 1em;
 }
 
-/* button {
+button {
     margin-top: 1em;
-} */
+}
 
 #country-container {
     display: flex;

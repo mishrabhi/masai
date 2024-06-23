@@ -1,3 +1,4 @@
+//event listener on dom content load
 document.addEventListener("DOMContentLoaded", () => {
   fetchCountries();
 });
@@ -40,3 +41,15 @@ function displayCountries(countries) {
     countryContainer.append(countryCard);
   });
 }
+
+//function to sort countries by population
+function sortCountriesByPopulation() {
+  countries.sort((a, b) => a.population - b.population);
+  displayCountries(countries);
+}
+
+//Selecting button
+let sortButton = document.getElementById("sort-population");
+
+//added click event listener on button
+sortButton.addEventListener("click", sortCountriesByPopulation);
