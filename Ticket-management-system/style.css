@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main container */
+main {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* table */
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Styling the buttons */
+button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+button.edit {
+    background-color: #28a745;
+}
+
+button.delete {
+    background-color: #dc3545;
+}
+
+/* Hover buttons */
+button.edit:hover {
+    background-color: #218838;
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}
+
+/* Aligning buttons in table cells */
+td {
+    vertical-align: middle;
+}
+
+/* Center-aligning the table headers */
+th {
+    text-align: center;
+}
