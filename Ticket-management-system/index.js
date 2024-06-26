@@ -37,6 +37,10 @@ function displayData(data) {
     let editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
     editBtn.classList.add("edit");
+    editBtn.addEventListener("click", function () {
+      localStorage.setItem("EditTask", ele.id);
+      window.location.href = "update.html";
+    });
 
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
