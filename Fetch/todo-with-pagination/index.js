@@ -1,5 +1,7 @@
+//Base URL(With pagination filter: It loads the Ist page with limit=12)
 let url = `https://jsonplaceholder.typicode.com/todos?_page=1&_limit=12`;
 
+//function to fetch the data
 const getData = async (url) => {
   try {
     let res = await fetch(`${url}`);
@@ -11,11 +13,13 @@ const getData = async (url) => {
   }
 };
 
+//function call to get data
 getData(url);
 
 let container = document.getElementById("container");
 container.innerHTML = "";
 
+//function to display data
 function displayData(data) {
   data.forEach((ele) => {
     let card = document.createElement("div");
@@ -35,23 +39,27 @@ function displayData(data) {
   });
 }
 
+//pagination
 let page = 1;
-let next = document.getElementById("next");
+let next = document.getElementById("next"); //selecting next button
 next.addEventListener("click", function () {
-  page++;
+  //added an eventlistener on next button
+  page++; //on evry click page will be incremented
   nextData();
 });
 
 let prev = document.getElementById("prev");
 prev.addEventListener("click", function () {
+  //added eventlistener on prev button
   if (page == 1) {
-    prev.button == disabled;
+    prev.button == disabled; //prev button disabled when page=1;
   } else {
-    page--;
+    page--; //decrementing page pn evry click
   }
   nextData();
 });
 
+//calling getData fun inside nextData() with generic url based on page number
 function nextData() {
   container.innerHTML = "";
   getData(`https://jsonplaceholder.typicode.com/todos?_page=${page}&_limit=12`);
