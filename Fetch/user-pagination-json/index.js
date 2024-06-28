@@ -4,6 +4,7 @@ let url = `https://jsonplaceholder.typicode.com/users?_page=1&_limit=6`;
 const getData = async (url) => {
   try {
     let res = await fetch(`${url}`);
+    pagination(res.headers.get("X-Total-count"), 6);
     let data = await res.json();
     console.log(data);
     displayUserData(data);
@@ -14,11 +15,10 @@ const getData = async (url) => {
 
 getData(url); //function call to get data
 
-let container = document.getElementById("container");
-container.textContent = "";
-
 //display Data function
 function displayUserData(data) {
+  let container = document.getElementById("container");
+  container.textContent = "";
   data.forEach((ele) => {
     let card = document.createElement("div");
     card.className = "card";
@@ -48,27 +48,17 @@ function displayUserData(data) {
 
 //pagination
 
-//selecting prev button and adding an eventlistener on it when clicked
-let page = 1;
-let prevBtn = document.getElementById("prev");
-prevBtn.addEventListener("click", function () {
-  if (page == 1) {
-    prevBtn.button == disabled;
-  } else {
-    page--;
+let page = document.getElementById("pagination");
+function pagination(total, limit) {
+  page.innerHTML = "";
+  let noOfBtn = Math.ceil(total / limit);
+  console.log(noOfBtn);
+  for (let i = 1; i <= noOfBtn; i++) {
+    let btn = document.createElement("button");
+    btn.textContent = i;
+    btn.addEventListener("click", function () {
+      getData(`https://jsonplaceholder.typicode.com/users?_page=${i}&_limit=6`);
+    });
+    page.append(btn);
   }
-  paginatedData();
-});
-
-//selecting next button and adding an eventlistener on it when clicked
-let nextBtn = document.getElementById("next");
-nextBtn.addEventListener("click", function () {
-  page++;
-  paginatedData();
-});
-
-//function to get paginated data
-function paginatedData() {
-  container.innerHTML = "";
-  getData(`https://jsonplaceholder.typicode.com/users?_page=${page}&_limit=6`);
 }
