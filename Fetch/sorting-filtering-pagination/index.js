@@ -1,4 +1,4 @@
-const url = `https://fakestoreapi.com/products`;
+const url = `http://localhost:3000/products`;
 
 const getData = async (url) => {
   try {
@@ -41,4 +41,17 @@ function displayData(products) {
     card.append(image, title, description, category, price, rating);
     container.append(card);
   });
+}
+
+//sorting
+
+let sort = document.getElementById("sort");
+sort.addEventListener("input", function () {
+  sortDataByPrice();
+});
+
+function sortDataByPrice() {
+  let sortVal = sort.value;
+  console.log(sortVal);
+  getData(`${url}?_sort=price&_order=${sortVal}`);
 }
