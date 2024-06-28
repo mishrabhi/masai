@@ -1,8 +1,11 @@
-# User Information with Pagination
+# User Data Display with Pagination
 
-This is a simple user information with pagination app that fetches data from the JSONPlaceholder API and displays it with pagination functionality.
+### Overview:
+
+This project fetches user data from the JSONPlaceholder API and displays it in a paginated format on a web page. The users' information, including name, username, email, address, phone, and website, is displayed in a card format. The pagination feature allows navigation through multiple pages of user data.
 
 ## Features
 
-- Fetch and display users information with pagination
-- Navigate through users using Next and Previous buttons.
+- Fetch user data from the JSONPlaceholder API.
+- Display user data in a card format.
+- Implement pagination to navigate through user data pages.
