@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Managemtn</title>
+    <title>Task Management</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -16,14 +16,18 @@
         <a href="create.html">Add Task</a>
       </div>
     </nav>
-    <select name="Filter" id="filter">
-      <option value="open">Open</option>
-      <option value="In progress">In-progress</option>
+    <select name="filter" id="filter">
+      <option value="">Filter By Status</option>
+      <option value="Open">Open</option>
+      <option value="In Progress">In Progress</option>
       <option value="Closed">Closed</option>
     </select>
 
     <div id="container"></div>
-    <div id="pagination-wrapper"></div>
+    <div id="pagination">
+      <button id="prev" name="prev">Prev</button>
+      <button id="next" name="next">Next</button>
+    </div>
 
     <script src="index.js"></script>
   </body>

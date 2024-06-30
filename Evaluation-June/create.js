@@ -19,12 +19,16 @@ form.addEventListener("submit", () => {
 });
 
 async function createTask(obj) {
-  await fetch(`${url}`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(obj),
-  });
-  window.location.href = "index.html";
+  try {
+    let res = await fetch(`${url}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    });
+    window.location.href = "index.html";
+  } catch (error) {
+    console.log(error);
+  }
 }

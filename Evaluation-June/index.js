@@ -1,4 +1,4 @@
-const url = `http://localhost:3000/tasks?_page=1&_limit=5`;
+const url = `http://localhost:3000/tasks`;
 
 const getData = async (url) => {
   try {
@@ -52,6 +52,7 @@ function displayData(tasks) {
   });
 }
 
+//delete task
 async function deleteTask(id) {
   try {
     await fetch(`${url}/${id}`, { method: "DELETE" });
@@ -61,6 +62,7 @@ async function deleteTask(id) {
   getData(url);
 }
 
+//filter
 let filter = document.getElementById("filter");
 filter.addEventListener("input", function () {
   filterData();
@@ -69,7 +71,29 @@ filter.addEventListener("input", function () {
 function filterData() {
   let filterVal = filter.value;
   console.log(filterVal);
-  getData(`${url}&status=${filterVal}`);
+  getData(`${url}?status=${filterVal}`);
 }
 
 //pagination
+let page = 1;
+let prev = document.getElementById("prev");
+prev.addEventListener("click", function () {
+  if (page == 1) {
+    prev.button = disabled;
+  } else {
+    page--;
+  }
+  nextData();
+});
+
+let next = document.getElementById("next");
+next.addEventListener("click", function () {
+  page++;
+  nextData();
+});
+
+function nextData() {
+  container.innerHTML = "";
+  console.log(page);
+  getData(`http://localhost:3000/tasks?_page=${page}&_limit=5`);
+}

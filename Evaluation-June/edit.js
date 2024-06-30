@@ -1,10 +1,9 @@
 const url = `http://localhost:3000/tasks`;
 
-document
-  .getElementById("task-form-element")
-  .addEventListener("submit", function () {
-    updateData();
-  });
+document.getElementById("task-form").addEventListener("submit", function () {
+  event.preventDefault();
+  updateData();
+});
 
 async function updateData() {
   let id = localStorage.getItem("EditID");
@@ -12,7 +11,7 @@ async function updateData() {
   let title = document.getElementById("task-title").value;
   let description = document.getElementById("task-description").value;
   let status = document.getElementById("task-status").value;
-  let dueDate = document.getElementById("task-sue-date").value;
+  let dueDate = document.getElementById("task-due-date").value;
   let obj = {
     title,
     description,
@@ -24,7 +23,7 @@ async function updateData() {
   await fetch(`${url}/${id}`, {
     method: "PUT",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(obj),
   });
