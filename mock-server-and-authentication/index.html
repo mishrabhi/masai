@@ -4,11 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Authentication</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .card {
+        border: 1px solid black;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
-    <input type="text" placeholder="Username" id="username" />
-    <input type="text" placeholder="Password" id="password" />
-    <button id="login">Login</button>
+    <div id="login-container">
+      <h2>Signin:</h2>
+      <input type="text" placeholder="Username" id="username" />
+      <input type="text" placeholder="Password" id="password" />
+      <button id="login">Login</button>
+    </div>
+    <div id="message"></div>
+    <div id="todo-container" style="display: none">
+      <h2>Todos</h2>
+      <button id="fetch-todo">Fetch Todo</button>
+    </div>
+    <div id="container"></div>
     <script src="index.js"></script>
   </body>
 </html>
