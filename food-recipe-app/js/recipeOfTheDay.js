@@ -29,3 +29,5 @@ function displayRecipe(recipeOfTheDay) {
 
   container.append(image, mealName, desc);
 }
+
+export { recipeOfTheDay };
