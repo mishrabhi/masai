@@ -51,3 +51,19 @@ console.log(myphone.connectBluetooth());
 console.log(myphone.ASIN);
 console.log(myphone.color);
 console.log(myphone.display);
+
+//Practice for apply:
+
+let person1 = {
+  name: "Abhishek",
+};
+
+let person2 = {
+  name: "Ashu",
+};
+
+function myName(age, city) {
+  console.log(this.name + age + city);
+}
+
+myName.apply(person1, [28, "Bangalore"]);
