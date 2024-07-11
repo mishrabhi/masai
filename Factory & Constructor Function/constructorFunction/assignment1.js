@@ -17,15 +17,21 @@
 // Problem Statement
 // Implement a constructor function iPhone3 that fulfills the requirements mentioned above. Use the .call() method to initialize the properties of the created objects. Ensure that the created objects have the specified properties and methods.
 
-function iPhone3(ASIN, color, display, camera, bluetooth) {
+function phone(ASIN, color, display, camera, bluetooth) {
   (this.ASIN = ASIN),
     (this.color = color),
     (this.display = display),
     (this.camera = camera),
-    (this.bluetooth = bluetooth),
-    (this.dial = function () {
-      return "tring..tring..";
-    }),
+    (this.bluetooth = bluetooth);
+}
+
+function iPhone3(ASIN, color, display, camera, bluetooth) {
+  phone.call(this, ASIN, color, display, camera, bluetooth); //call
+
+  //methods
+  (this.dial = function () {
+    return "tring..tring..";
+  }),
     (this.sendMessage = function () {
       return "Sending message";
     }),
@@ -36,10 +42,12 @@ function iPhone3(ASIN, color, display, camera, bluetooth) {
       return "Bluetooth Connected Successfully";
     });
 }
-
-let phone = new iPhone3("B09XXXX", "Gold", "Amoled", "20 MP", true);
-console.log(phone);
-console.log(phone.dial());
-console.log(phone.sendMessage());
-console.log(phone.cameraClick());
-console.log(phone.connectBluetooth());
+let myphone = new iPhone3("B09XXXX", "Gold", "Amoled", "20 MP", true);
+console.log(myphone);
+console.log(myphone.dial());
+console.log(myphone.sendMessage());
+console.log(myphone.cameraClick());
+console.log(myphone.connectBluetooth());
+console.log(myphone.ASIN);
+console.log(myphone.color);
+console.log(myphone.display);
