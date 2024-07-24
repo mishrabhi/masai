@@ -78,11 +78,36 @@ class Manager extends Employee {
 
 let m1 = new Manager("Sumit", 24);
 console.log(m1);
-console.log(m1.managing());
 console.log(Manager.getRole());
+console.log(m1.managing());
 
 //   #### Question 4: Class Definition: Executive.
 //   Create a class named Executive that extends the existing Manager class.
 //   - The Executive class should have a private field bonus to store the bonus specific to the executive.
 //   - Implement a getter method for the bonus property. This getter should return the value of the bonus field.
 //   - Implement a setter method for the bonus property. This setter should update the bonus field only if the provided value is greater than 0.
+
+class Executive extends Manager {
+  #bonus;
+  constructor(name, age, bonus) {
+    super(name, age);
+    this.#bonus = bonus;
+  }
+
+  get bonus() {
+    return this.#bonus;
+  }
+
+  set bonus(val) {
+    if (val > 0) {
+      this.#bonus = val;
+    } else {
+      console.log("Bonus is greater than 0");
+    }
+  }
+}
+
+let Ex = new Executive("Sumit", 24, 1000);
+console.log(Ex);
+Ex.bonus = 1000;
+console.log(Ex.bonus);
