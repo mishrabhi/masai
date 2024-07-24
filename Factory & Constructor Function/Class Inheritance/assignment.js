@@ -62,6 +62,25 @@ E1.working();
 //   - Add a static method called getRole that returns the string "Manager".
 //   - Add a method to the prototype called managing that will return "<name> is managing". Here <name> should be the name of the person.
 
+class Manager extends Employee {
+  constructor(name, age) {
+    super(name, age);
+  }
+
+  static getRole() {
+    return "Manager";
+  }
+
+  managing() {
+    return `${this.name} is managing`;
+  }
+}
+
+let m1 = new Manager("Sumit", 24);
+console.log(m1);
+console.log(m1.managing());
+console.log(Manager.getRole());
+
 //   #### Question 4: Class Definition: Executive.
 //   Create a class named Executive that extends the existing Manager class.
 //   - The Executive class should have a private field bonus to store the bonus specific to the executive.
